@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">  
+    <span>Micro-Seal</span>  
+    <span class="demo-toolbar"></span>  
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/account']">
+        <mat-icon>dialpad</mat-icon>
+        <span>Account</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/actionCode']">
+        <mat-icon>notifications_off</mat-icon>
+        <span>Action Code</span>
+      </button>
+      <button mat-menu-item [routerLink]="['']">
+        <mat-icon>undo</mat-icon>
+        <span>sign out</span>
+      </button>  
+    </mat-menu>
+  </mat-toolbar>  
+  <router-outlet></router-outlet>
