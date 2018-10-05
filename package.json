@@ -6,17 +6,19 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test:ng": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "seal-prod": "ng build --prod && electron .",
     "seal:build": "ng build && electron .",
     "seal": "ng build && electron .",
     "go": "nodemon -w *.*.ts --exec ts-node ./server/main.ts",
-    "go:seal": "nodemon -w *.*.ts --exec ts-node ./server/main.ts && npm run seal:build",
+    "go:seal": "npm run go && npm run seal:build",
     "go:clean:dist": "rm -rf dist",
     "go:build": "npm run go:clean:dist && tsc && npm run go:prod",
-    "go:prod": "cd dist && node main.js"
+    "go:prod": "cd dist && node main.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "private": true,
   "dependencies": {
@@ -55,10 +57,13 @@
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^23.3.1",
     "@types/node": "~10.9.2",
     "codelyzer": "~4.4.4",
     "jasmine-core": "~3.2.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^23.5.0",
+    "jest-preset-angular": "^6.0.0",
     "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.0",
@@ -66,7 +71,6 @@
     "karma-jasmine-html-reporter": "^1.3.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.1",
-    "tslint": "~5.11.0",
-    "typescript": "~3.0.1"
+    "tslint": "~5.11.0"
   }
 }

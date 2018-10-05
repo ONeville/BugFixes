@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "micro-seal"
+  "defaultProject": "micro-seal",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
